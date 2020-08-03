@@ -41,9 +41,20 @@ public class MommifierTest {
         //Given
         VowelChecker checker = new VowelChecker();
         //When
-        String word = "akele";
+        String word = "aiaihhh";
         String result = checker.check(word);
         //Then
         assertEquals(result,word);
+    }
+
+    @Test
+    void with_more_than_30percent_continuous_vowels_return_word_mommy() {
+        //Given
+        VowelChecker checker = new VowelChecker();
+        //When
+        String word = "aa";
+        String result = checker.check(word);
+        //Then
+        assertEquals(result,"amommya");
     }
 }
