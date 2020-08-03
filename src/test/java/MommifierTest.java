@@ -36,5 +36,14 @@ public class MommifierTest {
         assertEquals(result,word);
     }
 
-
+    @Test
+    void with_less_than_30percent_continuous_vowels_return_original_word() {
+        //Given
+        VowelChecker checker = new VowelChecker();
+        //When
+        String word = "akele";
+        String result = checker.check(word);
+        //Then
+        assertEquals(result,word);
+    }
 }
