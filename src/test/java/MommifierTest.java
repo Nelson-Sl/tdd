@@ -13,4 +13,14 @@ public class MommifierTest {
         //Then
         assertEquals(result,word);
     }
+
+    void with_uncontinuous_vowels_return_original_word() {
+        //Given
+        VowelChecker checker = new VowelChecker();
+        //When
+        String word = "kaixin";
+        String result = checker.check(word);
+        //Then
+        assertEquals(result,word);
+    }
 }
