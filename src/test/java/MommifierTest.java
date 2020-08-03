@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MommifierTest {
     @Test
@@ -56,5 +57,15 @@ public class MommifierTest {
         String result = checker.check(word);
         //Then
         assertEquals(result,"amommya");
+    }
+
+    @Test
+    void with_null_string_throw_Exception() {
+        //Given
+        VowelChecker checker = new VowelChecker();
+        //When
+        String word = null;
+        //Then
+        assertThrows(Exception.class,() -> checker.check(word));
     }
 }

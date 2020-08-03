@@ -2,8 +2,17 @@ import java.util.Arrays;
 
 public class VowelChecker {
     static String vowelLetters = "[aeiou]";
+    static String nullMessage = "The String input is null";
 
     public String check(String word) {
+        if(word == null){
+            try {
+                throw new Exception(nullMessage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         int vowelCount = 0;
         String[] wordArray = word.split("");
         for(int i = 0; i < wordArray.length; i++){
